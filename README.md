@@ -4,7 +4,7 @@
 **Final Website Project**
 
 ## **Team Members:**  
-- **Akash N V**  
+- **Akash Nadackanal Vinod**  
 - **Ken Biju**  
 - **Abijith Anil**
 
