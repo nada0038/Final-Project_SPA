@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Project Documentation – Final Web Development Project
 
 ## **Project Title:**  
