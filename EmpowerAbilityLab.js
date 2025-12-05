@@ -134,20 +134,6 @@ document.addEventListener("DOMContentLoaded", () => {
       // Update active link styling
       updateNavState(link);
 
-      // Handle browser Back/Forward buttons
-      window.addEventListener("popstate", () => {
-        
-        // Get the current hash or default to "home"
-        const hash = window.location.hash.substring(1) || "home";
-
-        // Find the corresponding nav link
-        const link = document.querySelector(`.nav-link[href="#${hash}"]`);
-
-        // Show the section and update nav highlighting
-        showSection(hash);
-        updateNavState(link);
-      });
-
       // Update URL hash for navigation
       history.pushState(null, "", `#${targetId}`);
 
@@ -160,6 +146,19 @@ document.addEventListener("DOMContentLoaded", () => {
   // Default page load → show the Home section
   showSection("home");
   updateNavState(navLinks[0]);
+
+  // Handle browser Back/Forward buttons
+  window.addEventListener("popstate", () => {
+    // Get the current hash or default to "home"
+    const hash = window.location.hash.substring(1) || "home";
+
+    // Find the corresponding nav link
+    const link = document.querySelector(`.nav-link[href="#${hash}"]`);
+
+    // Show the section and update nav highlighting
+    showSection(hash);
+    updateNavState(link);
+  });
 
   // ---------------------------
   // Mobile Navigation Toggle
