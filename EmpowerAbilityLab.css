@@ -25,9 +25,9 @@ body {
 }
 
 .navbar .container {
-  position: relative;          /* allows absolute logo */
+  position: relative; /* allows absolute logo */
   display: flex;
-  justify-content: center;     /* centers the nav links */
+  justify-content: center; /* centers the nav links */
   align-items: center;
   width: 100%;
 }
@@ -41,11 +41,9 @@ body {
 }
 
 .navbar .navbar-brand img {
-    width: 200px;
-    height: auto;   /* keeps proportions correct */
+  width: 200px;
+  height: auto; /* keeps proportions correct */
 }
-
-
 
 .navbar-brand {
   display: flex;
@@ -184,10 +182,9 @@ form textarea {
   cursor: pointer;
 }
 label .text-danger {
-    color: #dc3545 !important;
-    font-weight: 600;
+  color: #dc3545 !important;
+  font-weight: 600;
 }
-
 
 .switch .slider::before {
   content: "";
