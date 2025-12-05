@@ -1,11 +1,13 @@
 :root {
+  /* Global color variables */
   --primary: #005a9c;
   --secondary: #007acc;
-  --background: #f4f4f4;
+  --background: #ffffff;
   --text: #333;
 }
 
 body {
+  /* Basic page defaults */
   font-family: Arial, sans-serif;
   margin: 0;
   background: var(--background);
@@ -13,26 +15,32 @@ body {
 }
 
 .container {
+  /* Centers content and sets a max width */
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem;
 }
 
+/* ------------------------------ */
+/*            NAVBAR              */
+/* ------------------------------ */
+
 .navbar {
   background: #ffffff;
   padding: 0.5rem 1rem;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #ccc; /* subtle line under navbar */
 }
 
 .navbar .container {
-  position: relative; /* allows absolute logo */
+  /* Center nav links; allow absolute-positioned logo */
+  position: relative;
   display: flex;
-  justify-content: center; /* centers the nav links */
+  justify-content: center;
   align-items: center;
   width: 100%;
 }
 
-/* Force the logo to the left */
+/* Force the logo to stay on the left */
 .navbar .navbar-brand {
   position: absolute;
   left: 0;
@@ -42,7 +50,7 @@ body {
 
 .navbar .navbar-brand img {
   width: 200px;
-  height: auto; /* keeps proportions correct */
+  height: auto; /* keeps proportions */
 }
 
 .navbar-brand {
@@ -50,14 +58,16 @@ body {
   align-items: center;
 }
 
+/* Navigation links container */
 .navbar-nav {
   display: flex;
   gap: 1rem;
-  list-style: none; /* remove bullets */
+  list-style: none; /* removes bullets */
   margin: 0;
   padding: 0;
 }
 
+/* Nav link styling */
 .nav-link {
   text-decoration: none;
   color: var(--primary);
@@ -65,6 +75,7 @@ body {
   border-radius: 4px;
 }
 
+/* Highlight active or focused nav link */
 .nav-link:focus,
 .nav-link.active-link {
   background: var(--secondary);
@@ -72,6 +83,7 @@ body {
   outline: 2px solid var(--secondary);
 }
 
+/* Hamburger (not used in desktop layout) */
 .navbar-toggler {
   display: none;
   background: none;
@@ -79,25 +91,37 @@ body {
   border: none;
 }
 
+/* ------------------------------ */
+/*            SECTIONS            */
+/* ------------------------------ */
+
 section {
-  display: none;
+  display: none; /* Hide by default */
   padding: 2rem 0;
 }
 
 section.active {
-  display: block;
+  display: block; /* Only active section shows */
 }
+
+/* ------------------------------ */
+/*         GRID LAYOUTS           */
+/* ------------------------------ */
 
 .grid {
   display: flex;
   gap: 2rem;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* responsive stacking */
 }
 
 .grid > div {
   flex: 1;
-  min-width: 250px;
+  min-width: 250px; /* prevents shrinking too small */
 }
+
+/* ------------------------------ */
+/*        BUTTON STYLING          */
+/* ------------------------------ */
 
 .btn,
 .btn-link {
@@ -110,12 +134,17 @@ section.active {
   border-radius: 4px;
 }
 
+/* Text-only button link */
 .btn-link {
   background: none;
   color: var(--primary);
   text-decoration: underline;
   padding: 0;
 }
+
+/* ------------------------------ */
+/*           MODAL BOX            */
+/* ------------------------------ */
 
 .modal {
   display: none;
@@ -124,13 +153,13 @@ section.active {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5); /* dim background */
   justify-content: center;
   align-items: center;
 }
 
 .modal.active {
-  display: flex;
+  display: flex; /* Show modal */
 }
 
 .modal-content {
@@ -141,18 +170,24 @@ section.active {
   width: 90%;
 }
 
+/* Modal header layout */
 .modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* Close button */
 .btn-close {
   background: none;
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
 }
+
+/* ------------------------------ */
+/*            FORMS               */
+/* ------------------------------ */
 
 form input,
 form textarea {
@@ -163,6 +198,16 @@ form textarea {
   border: 1px solid #ccc;
 }
 
+/* Required field red labels */
+label .text-danger {
+  color: #dc3545 !important;
+  font-weight: 600;
+}
+
+/* ------------------------------ */
+/*          SWITCH TOGGLE         */
+/* ------------------------------ */
+
 .switch {
   display: flex;
   align-items: center;
@@ -170,7 +215,7 @@ form textarea {
 }
 
 .switch input {
-  display: none;
+  display: none; /* hide default checkbox */
 }
 
 .switch .slider {
@@ -181,11 +226,8 @@ form textarea {
   border-radius: 20px;
   cursor: pointer;
 }
-label .text-danger {
-  color: #dc3545 !important;
-  font-weight: 600;
-}
 
+/* Toggle knob */
 .switch .slider::before {
   content: "";
   position: absolute;
@@ -198,22 +240,27 @@ label .text-danger {
   transition: 0.3s;
 }
 
+/* When checkbox is turned on */
 .switch input:checked + .slider::before {
   transform: translateX(20px);
   background: var(--primary);
 }
 
+/* ------------------------------ */
+/*        SCHEDULE SECTION        */
+/* ------------------------------ */
 
 .schedule-intro {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;   /* THIS vertically aligns image + text */
-    gap: 40px;
-    margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* vertically centers text + image */
+  gap: 40px;
+  margin-bottom: 40px;
 }
 
+/* Schedule image styling */
 .schedule-intro img {
-    width: 200px;  /* adjust size as needed */
-    height: auto;
-    display: block;
+  width: 200px;  /* control size */
+  height: auto;
+  display: block;
 }
